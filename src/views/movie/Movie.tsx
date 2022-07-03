@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, Pressable, StyleSheet} from 'react-native';
 import {IMovie} from '../../@types/IMovie';
+import Header from '../../components/Header';
 import ScrollContainer from '../../containers/ScrollContainer';
 
 interface MovieProps {
@@ -16,7 +17,7 @@ const Movie = (props: MovieProps) => {
       </Pressable>
       {props.movie ? (
         <View>
-          <Text style={styles.title}>{props.movie.title}</Text>
+          <Header text={props.movie.title} />
           <Text style={styles.overview}>{props.movie.overview}</Text>
         </View>
       ) : undefined}
