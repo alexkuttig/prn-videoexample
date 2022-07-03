@@ -4,6 +4,7 @@ import {IMovie} from './@types/IMovie';
 import Genre from './views/genre/Genre';
 import Home from './views/home/Home';
 import Movie from './views/movie/Movie';
+import {View} from 'react-native';
 
 const PAGES = {
   HOME: 0,
@@ -50,6 +51,8 @@ const App = () => {
       );
     case PAGES.MOVIE:
       return <Movie backToGenres={backToGenres} movie={movie} />;
+    default:
+      return <View />;
   }
 };
 
