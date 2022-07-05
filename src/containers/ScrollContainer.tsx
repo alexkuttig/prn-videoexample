@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import {ColorConstants, SizeConstants} from '../constants/StyleConstants';
 
 interface ScrollContainerProps {
@@ -8,14 +8,12 @@ interface ScrollContainerProps {
 
 const ScrollContainer = (props: ScrollContainerProps) => {
   return (
-    <SafeAreaView style={styles.backgroundStyle}>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        contentContainerStyle={styles.contentContainer}
-        style={styles.backgroundStyle}>
-        {props.children}
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView
+      contentInsetAdjustmentBehavior="automatic"
+      contentContainerStyle={styles.contentContainer}
+      style={styles.backgroundStyle}>
+      {props.children}
+    </ScrollView>
   );
 };
 
