@@ -2,7 +2,13 @@ import React, {useState, useEffect} from 'react';
 import {Pressable, Text, StyleSheet} from 'react-native';
 import {IGenre} from '../../@types/IGenre';
 import {IMovie} from '../../@types/IMovie';
+import BackButton from '../../components/BackButton';
 import Header from '../../components/Header';
+import {
+  ColorConstants,
+  FontConstants,
+  SizeConstants,
+} from '../../constants/StyleConstants';
 import ScrollContainer from '../../containers/ScrollContainer';
 import {getMovieByGenreId} from '../../services/movieService';
 
@@ -23,9 +29,7 @@ const Genre = (props: GenreProps) => {
 
   return (
     <ScrollContainer>
-      <Pressable onPress={props.backToHome} style={styles.backButton}>
-        <Text>Back to home</Text>
-      </Pressable>
+      <BackButton onPress={props.backToHome} text="Back to home" />
       <Header text="Movies" />
       {movies.map(movie => {
         return (
@@ -39,21 +43,12 @@ const Genre = (props: GenreProps) => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  backButton: {
-    padding: 16,
-    marginBottom: 16,
-    backgroundColor: '#dddddd',
-  },
   movieTitle: {
-    fontSize: 14,
-    marginBottom: 2,
-    padding: 16,
-    backgroundColor: '#eaeaea',
+    fontSize: FontConstants.sizeRegular,
+    marginBottom: SizeConstants.paddingSmall,
+    padding: SizeConstants.paddingLarge,
+    backgroundColor: ColorConstants.backgroundLight,
+    color: ColorConstants.font,
   },
 });
 

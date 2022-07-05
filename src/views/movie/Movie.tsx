@@ -1,7 +1,9 @@
 import React from 'react';
-import {Text, View, Pressable, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import {IMovie} from '../../@types/IMovie';
+import BackButton from '../../components/BackButton';
 import Header from '../../components/Header';
+import {FontConstants, ColorConstants} from '../../constants/StyleConstants';
 import ScrollContainer from '../../containers/ScrollContainer';
 
 interface MovieProps {
@@ -12,9 +14,7 @@ interface MovieProps {
 const Movie = (props: MovieProps) => {
   return (
     <ScrollContainer>
-      <Pressable onPress={props.backToGenres} style={styles.backButton}>
-        <Text>Back to genre</Text>
-      </Pressable>
+      <BackButton onPress={props.backToGenres} text="Back to genres" />
       {props.movie ? (
         <View>
           <Header text={props.movie.title} />
@@ -26,18 +26,9 @@ const Movie = (props: MovieProps) => {
 };
 
 const styles = StyleSheet.create({
-  backButton: {
-    padding: 16,
-    marginBottom: 16,
-    backgroundColor: '#dddddd',
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
   overview: {
-    fontSize: 14,
+    fontSize: FontConstants.sizeRegular,
+    color: ColorConstants.font,
   },
 });
 

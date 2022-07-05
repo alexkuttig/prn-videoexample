@@ -4,6 +4,11 @@ import {IGenre} from '../../@types/IGenre';
 import {getGenres} from '../../services/movieService';
 import ScrollContainer from '../../containers/ScrollContainer';
 import Header from '../../components/Header';
+import {
+  ColorConstants,
+  FontConstants,
+  SizeConstants,
+} from '../../constants/StyleConstants';
 
 interface HomeProps {
   chooseGenre: (genre: IGenre) => void;
@@ -31,16 +36,12 @@ const Home = (props: HomeProps) => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
   genreTitle: {
-    fontSize: 14,
-    marginBottom: 2,
-    padding: 16,
-    backgroundColor: '#eaeaea',
+    fontSize: FontConstants.sizeRegular,
+    marginBottom: SizeConstants.paddingSmall,
+    padding: SizeConstants.paddingLarge,
+    backgroundColor: ColorConstants.backgroundLight,
+    color: ColorConstants.font,
   },
 });
 
