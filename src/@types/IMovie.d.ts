@@ -1,4 +1,4 @@
-export interface IMovie {
+export type IMovie = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -13,4 +13,4 @@ export interface IMovie {
   video: boolean;
   vote_average: number;
   vote_count: number;
-}
+};
