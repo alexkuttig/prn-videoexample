@@ -1,7 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {MainStackParamList} from '../../@types/MainStack';
+import {MainStackParamList} from '../../@types/Stacks';
 import {FontConstants, ColorConstants} from '../../constants/StyleConstants';
 import ScrollContainer from '../../containers/ScrollContainer';
 

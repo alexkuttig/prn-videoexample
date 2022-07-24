@@ -9,7 +9,7 @@ import {
   SizeConstants,
 } from '../../constants/StyleConstants';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import type {MainStackParamList} from '../../@types/MainStack';
+import type {MainStackParamList} from '../../@types/Stacks';
 
 type HomeProps = NativeStackScreenProps<MainStackParamList, 'Home'>;
 

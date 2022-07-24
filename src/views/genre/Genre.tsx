@@ -2,7 +2,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {useState, useEffect} from 'react';
 import {Pressable, Text, StyleSheet} from 'react-native';
 import {IMovie} from '../../@types/IMovie';
-import {MainStackParamList} from '../../@types/MainStack';
+import {MainStackParamList} from '../../@types/Stacks';
 import {
   ColorConstants,
   FontConstants,
