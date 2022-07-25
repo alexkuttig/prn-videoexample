@@ -1,30 +1,40 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, Pressable} from 'react-native';
 import {
   ColorConstants,
   FontConstants,
   SizeConstants,
 } from '../../constants/StyleConstants';
+import {useUser} from '../../context/UserContext';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {UserStackParamList} from '../../@types/Stacks';
+import ScrollContainer from '../../containers/ScrollContainer';
 
-const User = () => {
+type UserProps = NativeStackScreenProps<UserStackParamList, 'User'>;
+
+const User = (props: UserProps) => {
+  const {getFavsAsArray} = useUser();
+  const _favsArray = getFavsAsArray();
   return (
-    <View style={styles.placeholderContainer}>
-      <Text style={styles.placeholder}>We will create the user area here.</Text>
-    </View>
+    <ScrollContainer>
+      {_favsArray.map(movie => {
+        return (
+          <Pressable
+            onPress={() => props.navigation.navigate('Movie', {movie: movie})}>
+            <Text style={styles.movieTitle}>{movie.title}</Text>
+          </Pressable>
+        );
+      })}
+    </ScrollContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  placeholderContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: ColorConstants.background,
-  },
-  placeholder: {
+  movieTitle: {
     fontSize: FontConstants.sizeRegular,
     marginBottom: SizeConstants.paddingSmall,
     padding: SizeConstants.paddingLarge,
+    backgroundColor: ColorConstants.backgroundLight,
     color: ColorConstants.font,
   },
 });

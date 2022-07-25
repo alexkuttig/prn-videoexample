@@ -10,4 +10,7 @@ export type MainStackParamList = {
 
 export type UserStackParamList = {
   User: undefined;
+  Movie: {
+    movie: IMovie;
+  };
 };

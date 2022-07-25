@@ -9,12 +9,14 @@ import {
   SizeConstants,
 } from '../../constants/StyleConstants';
 import ScrollContainer from '../../containers/ScrollContainer';
+import {useUser} from '../../context/UserContext';
 import {getMovieByGenreId} from '../../services/movieService';
 
 type GenreProps = NativeStackScreenProps<MainStackParamList, 'Genre'>;
 
 const Genre = (props: GenreProps) => {
   const [movies, setMovies] = useState<IMovie[]>([]);
+  const {isFav} = useUser();
 
   useEffect(() => {
     if (typeof props.route.params.genre !== 'undefined') {
@@ -24,24 +26,32 @@ const Genre = (props: GenreProps) => {
 
   return (
     <ScrollContainer>
-      {movies.map(movie => {
-        return (
-          <Pressable
-            onPress={() => props.navigation.navigate('Movie', {movie: movie})}>
-            <Text style={styles.movieTitle}>{movie.title}</Text>
-          </Pressable>
-        );
-      })}
+      {movies.map(movie => (
+        <Pressable
+          style={styles.movieTitleContainer}
+          onPress={() => props.navigation.navigate('Movie', {movie: movie})}>
+          {isFav(movie.id) ? (
+            <Text style={styles.movieTitleFav}>👍</Text>
+          ) : undefined}
+          <Text style={styles.movieTitle}>{movie.title}</Text>
+        </Pressable>
+      ))}
     </ScrollContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  movieTitle: {
-    fontSize: FontConstants.sizeRegular,
+  movieTitleContainer: {
     marginBottom: SizeConstants.paddingSmall,
     padding: SizeConstants.paddingLarge,
     backgroundColor: ColorConstants.backgroundLight,
+    flexDirection: 'row',
+  },
+  movieTitleFav: {
+    marginRight: 4,
+  },
+  movieTitle: {
+    fontSize: FontConstants.sizeRegular,
     color: ColorConstants.font,
   },
 });
