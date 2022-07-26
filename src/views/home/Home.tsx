@@ -10,13 +10,13 @@ import {
 } from '../../constants/StyleConstants';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import type {MainStackParamList} from '../../@types/Stacks';
-import {useUser} from '../../context/UserContext';
+import {useUserStore} from '../../store/userStore';
 
 type HomeProps = NativeStackScreenProps<MainStackParamList, 'Home'>;
 
 const Home = (props: HomeProps) => {
   const [genres, setGenres] = useState<IGenre[]>([]);
-  const {name} = useUser();
+  const name = useUserStore(state => state.name);
 
   useEffect(() => {
     setGenres(getGenres());
@@ -29,6 +29,7 @@ const Home = (props: HomeProps) => {
       {genres.map(genre => {
         return (
           <Pressable
+            key={genre.name}
             onPress={() => props.navigation.navigate('Genre', {genre: genre})}>
             <Text style={styles.genreTitle}>{genre.name}</Text>
           </Pressable>

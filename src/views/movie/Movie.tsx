@@ -4,13 +4,17 @@ import {Text, View, StyleSheet, Pressable} from 'react-native';
 import {MainStackParamList} from '../../@types/Stacks';
 import {FontConstants, ColorConstants} from '../../constants/StyleConstants';
 import ScrollContainer from '../../containers/ScrollContainer';
-import {useUser} from '../../context/UserContext';
+import {useUserStore} from '../../store/userStore';
 
 type MovieProps = NativeStackScreenProps<MainStackParamList, 'Movie'>;
 
 const Movie = (props: MovieProps) => {
-  const {isFav, addFavById, removeFav} = useUser();
-  const _isFav = isFav(props.route.params.movie.id);
+  const [addFavById, favs, removeFav] = useUserStore(state => [
+    state.addFavById,
+    state.favs,
+    state.removeFav,
+  ]);
+  const _isFav = favs[props.route.params.movie.id];
   return (
     <ScrollContainer>
       {props.route.params.movie ? (

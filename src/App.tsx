@@ -8,7 +8,6 @@ import type {MainStackParamList, UserStackParamList} from './@types/Stacks';
 import {ColorConstants, FontConstants} from './constants/StyleConstants';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import User from './views/user/User';
-import {UserProvider} from './context/UserContext';
 
 const TabNavigator = createBottomTabNavigator();
 const MainStack = createNativeStackNavigator<MainStackParamList>();
@@ -82,31 +81,29 @@ const UserStackScreen = () => {
 
 const App = () => {
   return (
-    <UserProvider>
-      <NavigationContainer theme={MovieTheme}>
-        <TabNavigator.Navigator
-          screenOptions={{
-            tabBarInactiveBackgroundColor: ColorConstants.background,
-            tabBarActiveBackgroundColor: ColorConstants.background,
-            tabBarInactiveTintColor: ColorConstants.font,
-          }}>
-          <TabNavigator.Screen
-            name="Main"
-            component={MainStackScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <TabNavigator.Screen
-            name="User"
-            component={UserStackScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-        </TabNavigator.Navigator>
-      </NavigationContainer>
-    </UserProvider>
+    <NavigationContainer theme={MovieTheme}>
+      <TabNavigator.Navigator
+        screenOptions={{
+          tabBarInactiveBackgroundColor: ColorConstants.background,
+          tabBarActiveBackgroundColor: ColorConstants.background,
+          tabBarInactiveTintColor: ColorConstants.font,
+        }}>
+        <TabNavigator.Screen
+          name="MainTab"
+          component={MainStackScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <TabNavigator.Screen
+          name="UserTab"
+          component={UserStackScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </TabNavigator.Navigator>
+    </NavigationContainer>
   );
 };
 
