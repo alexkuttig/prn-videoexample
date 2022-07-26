@@ -1,4 +1,6 @@
+import {IMovie} from './IMovie';
+
 export type IUser = {
   name: string;
-  favs: number[];
+  favs: {[favId: number]: IMovie};
 };

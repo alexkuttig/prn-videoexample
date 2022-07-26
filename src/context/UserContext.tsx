@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import {AsyncStorage} from 'react-native';
 import {IMovie} from '../@types/IMovie';
 import {getMovieById} from '../services/movieService';
 
@@ -52,6 +53,20 @@ export function useUser() {
 export function UserProvider(props: any) {
   const [name, setName] = useState<string>('John');
   const [favs, setFavs] = useState<{[favId: number]: IMovie}>({});
+
+  useEffect(() => {
+    AsyncStorage.getItem('HYDRATE::FAVORITE_MOVIES').then(value => {
+      if (value) {
+        setFavs(JSON.parse(value));
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (favs !== {}) {
+      AsyncStorage.setItem('HYDRATE::FAVORITE_MOVIES', JSON.stringify(favs));
+    }
+  }, [favs]);
 
   const addFav = (fav: IMovie): void => {
     if (!favs[fav.id]) {
