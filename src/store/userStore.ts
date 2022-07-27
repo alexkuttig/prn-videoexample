@@ -22,10 +22,10 @@ export const useUserStore = create(
           set({favs: _favs});
         }
       },
-      addFavById: (favId: number) => {
+      addFavById: async (favId: number) => {
         const _favs = {...get().favs};
         if (!_favs[favId]) {
-          const movie = getMovieById(favId);
+          const movie = await getMovieById(favId);
           if (movie) {
             _favs[favId] = movie;
             set({favs: _favs});

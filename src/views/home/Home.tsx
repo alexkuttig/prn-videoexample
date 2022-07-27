@@ -19,7 +19,10 @@ const Home = (props: HomeProps) => {
   const name = useUserStore(state => state.name);
 
   useEffect(() => {
-    setGenres(getGenres());
+    const fetchData = async () => {
+      setGenres(await getGenres());
+    };
+    fetchData();
   }, []);
 
   console.log('rerender home');
