@@ -1,6 +1,6 @@
 import React from 'react';
 import Genre from './views/genre/Genre';
-import Home from './views/home/Home';
+import Home from './views/home';
 import Movie from './views/movie/Movie';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
