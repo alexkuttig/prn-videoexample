@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
-import {ColorConstants, SizeConstants} from '../constants/StyleConstants';
+import {ColorConstants, SizeConstants} from 'prn-video-example-styles';
 
 interface ScrollContainerProps {
   children: React.ReactNode;

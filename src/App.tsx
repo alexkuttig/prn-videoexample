@@ -5,7 +5,7 @@ import Movie from './views/movie/Movie';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {MainStackParamList, UserStackParamList} from './@types/Stacks';
-import {ColorConstants, FontConstants} from './constants/StyleConstants';
+import {ColorConstants, FontConstants} from 'prn-video-example-styles';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import User from './views/user/User';
 

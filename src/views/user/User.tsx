@@ -4,7 +4,7 @@ import {
   ColorConstants,
   FontConstants,
   SizeConstants,
-} from '../../constants/StyleConstants';
+} from 'prn-video-example-styles';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {UserStackParamList} from '../../@types/Stacks';
 import ScrollContainer from '../../containers/ScrollContainer';

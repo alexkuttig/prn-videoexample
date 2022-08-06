@@ -16,6 +16,7 @@
     "@react-navigation/bottom-tabs": "^6.3.2",
     "@react-navigation/native": "^6.0.10",
     "@react-navigation/native-stack": "^6.6.2",
+    "prn-video-example-styles": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17",
     "react-native": "0.68.2",

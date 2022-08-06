@@ -7,7 +7,7 @@ import {
   ColorConstants,
   FontConstants,
   SizeConstants,
-} from '../../constants/StyleConstants';
+} from 'prn-video-example-styles';
 import ScrollContainer from '../../containers/ScrollContainer';
 import {getMovieByGenreId} from '../../services/movieService';
 import {useUserStore} from '../../store/userStore';

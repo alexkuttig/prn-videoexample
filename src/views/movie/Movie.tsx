@@ -2,7 +2,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, View, StyleSheet, Pressable} from 'react-native';
 import {MainStackParamList} from '../../@types/Stacks';
-import {FontConstants, ColorConstants} from '../../constants/StyleConstants';
+import {FontConstants, ColorConstants} from 'prn-video-example-styles';
 import ScrollContainer from '../../containers/ScrollContainer';
 import {useUserStore} from '../../store/userStore';
 

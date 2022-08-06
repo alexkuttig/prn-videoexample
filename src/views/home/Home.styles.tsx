@@ -3,7 +3,7 @@ import {
   ColorConstants,
   FontConstants,
   SizeConstants,
-} from '../../constants/StyleConstants';
+} from 'prn-video-example-styles';
 const styles = StyleSheet.create({
   welcome: {
     color: ColorConstants.font,
