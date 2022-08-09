@@ -12,7 +12,7 @@ import ScrollContainer from '../../containers/ScrollContainer';
 import {getMovieByGenreId} from '../../services/movieService';
 import {useUserStore} from '../../store/userStore';
 
-type GenreProps = NativeStackScreenProps<MainStackParamList, 'Genre-fail'>;
+type GenreProps = NativeStackScreenProps<MainStackParamList, 'Genre'>;
 
 const Genre = (props: GenreProps) => {
   const [movies, setMovies] = useState<IMovie[]>([]);
