@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "typecheck": "tsc --noEmit",
     "start": "react-native start",
     "start:web": "cd web && webpack-dev-server",
     "build:web": "cd web && webpack",
