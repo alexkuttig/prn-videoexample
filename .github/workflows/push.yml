@@ -11,3 +11,7 @@ jobs:
         run: npm install
       - name: run typecheck
         run: npm run typecheck
+      - name: run prettier check for code styling
+        run: npm run prettier
+      - name: run eslint check for code errors
+        run: npm run lint
