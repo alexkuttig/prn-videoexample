@@ -1,9 +1,9 @@
-name: Lint files on push
+name: Check files on push
 
 on: push
 
 jobs:
-  build:
+  run-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
