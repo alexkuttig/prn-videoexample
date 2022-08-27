@@ -19,8 +19,11 @@ const Genre = (props: GenreProps) => {
   const favs = useUserStore(state => state.favs);
 
   useEffect(() => {
+    const fetchData = async () => {
+      setMovies(await getMovieByGenreId(props.route.params.genre.id));
+    };
     if (typeof props.route.params.genre !== 'undefined') {
-      setMovies(getMovieByGenreId(props.route.params.genre.id));
+      fetchData();
     }
   }, [props.route.params.genre]);
 
