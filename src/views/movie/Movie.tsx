@@ -20,7 +20,7 @@ const Movie = (props: MovieProps) => {
       {props.route.params.movie ? (
         <>
           <View>
-            <Text style={styles.overview}>
+            <Text style={styles.overview} testID="movieoverview">
               {props.route.params.movie.overview}
             </Text>
           </View>

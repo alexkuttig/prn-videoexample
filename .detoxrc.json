@@ -1,0 +1,27 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 12 Pro Max"
+      }
+    }
+  },
+  "apps": {
+    "ios.release": {
+      "name": "videoexample",
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/videoexample.app",
+      "build": "xcodebuild -workspace ios/videoexample.xcworkspace -scheme videoexample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build"
+    }
+  },
+  "configurations": {
+    "ios.sim.release": {
+      "device": "simulator",
+      "app": "ios.release"
+    }
+  }
+}
