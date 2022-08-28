@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing HomeView view has not changed 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    {
+      "backgroundColor": "#efefef",
+      "padding": 16,
+    }
+  }
+  contentInsetAdjustmentBehavior="automatic"
+  style={
+    {
+      "backgroundColor": "#efefef",
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <Text
+      style={
+        {
+          "color": "#222222",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "marginBottom": 8,
+        }
+      }
+    >
+      Hello 
+      John
+    </Text>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        style={
+          {
+            "backgroundColor": "#e8e8e8",
+            "color": "#222222",
+            "fontSize": 14,
+            "marginBottom": 2,
+            "padding": 16,
+          }
+        }
+      >
+        Action
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        style={
+          {
+            "backgroundColor": "#e8e8e8",
+            "color": "#222222",
+            "fontSize": 14,
+            "marginBottom": 2,
+            "padding": 16,
+          }
+        }
+      >
+        Adventure
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text
+        style={
+          {
+            "backgroundColor": "#e8e8e8",
+            "color": "#222222",
+            "fontSize": 14,
+            "marginBottom": 2,
+            "padding": 16,
+          }
+        }
+      >
+        Animation
+      </Text>
+    </View>
+  </View>
+</RCTScrollView>
+`;
