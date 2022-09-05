@@ -6,12 +6,12 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint ./src",
     "prettier": "prettier ./src --check",
     "start": "react-native start",
     "start:web": "cd web && webpack-dev-server",
     "build:web": "cd web && webpack",
     "test": "jest",
-    "lint": "eslint ./src",
     "generate": "node ./util/create-view"
   },
   "dependencies": {

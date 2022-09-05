@@ -1,17 +1,33 @@
-name: Lint files on push
+name: Check files on push
 
 on: push
 
 jobs:
-  build:
+  install:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          node-version: 16
+          cache: 'npm'
       - name: Install modules
-        run: npm install
+        run: npm ci
+  typecheck:
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
       - name: run typecheck
         run: npm run typecheck
+  prettier:
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
       - name: run prettier check for code styling
         run: npm run prettier
+  lint:
+    runs-on: ubuntu-latest
+    needs: [install]
+    steps:
       - name: run eslint check for code errors
         run: npm run lint
