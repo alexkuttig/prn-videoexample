@@ -1,7 +1,5 @@
 name: Check files on push
-
 on: push
-
 jobs:
   typecheck:
     runs-on: ubuntu-latest
